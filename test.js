@@ -43,8 +43,8 @@ const createGarage = async (numFloors, numCars) => {
 									delete garage[currentFloor - 1][car.id]
 									garage[currentFloor][car.id] = carInfo;
 								}
-								currentFloor++; 
-								tracker(garage);
+								currentFloor++;
+								console.log(garage)
 								moveCar();
 							} else {
 								resolve(car);
@@ -62,11 +62,6 @@ const createGarage = async (numFloors, numCars) => {
 	}
 }
 
-const tracker = (garage) => {
-	console.log("GARAGE STATUS: ", garage);
-	return;
-}
-
 (async () => {
-	await createGarage(3,20);
+	return await createGarage(3, 20);
 })();
